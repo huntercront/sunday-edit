@@ -362,9 +362,9 @@ h4 {
     visibility: hidden;
     position: absolute;
     opacity: 0;
-    transform: translateY(-1px);
+    transform: translateY(5px);
     transition: 200ms ease-in;
-    transition-property: opacity
+    transition-property: opacity, visibility, transform;
 }
 
 .navigation .menu-item-has-children ul.sub-menu li {
@@ -402,6 +402,29 @@ h4 {
     opacity: 1
 }
 
+.navigation>ul>li.menu-item-has-children a {
+    position: relative;
+}
+
+.navigation>ul>li>a:before {
+    width: 90%;
+    content: '';
+    position: absolute;
+    height: 1px;
+    background: #121416;
+    bottom: calc(50% - 2ch);
+    left: 50%;
+    transform: translate(-50%, 5px);
+    transition: 200ms ease-in;
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.navigation>ul>li:hover>a:before {
+    transform: translate(-50%, 0px);
+    opacity: 1;
+}
+
 button.button {
     text-decoration: none;
     background: #fff;
@@ -426,6 +449,11 @@ button.site-search {
 button.site-search:hover {
     background: #E1F7FF;
     cursor: pointer
+}
+
+.category-dash {
+    transition: 150ms ease-in;
+    transition-property: color;
 }
 
 .category-dash:after {
@@ -555,6 +583,19 @@ h2.post-title {
     text-transform: none
 }
 
+.post-title a:hover .category-dash {
+    color: #00a0dd;
+}
+
+.title-line {
+    transition: 200ms ease-in;
+    transition-property: opacity;
+}
+
+.post-title a:hover .title-line {
+    opacity: 0.7;
+}
+
 .post-title .title-wrap {
     font-family: Prata, serif;
     font-weight: 400;
@@ -676,6 +717,14 @@ article.post+article.post {
     object-fit: cover;
     width: 100%;
     height: 100%
+}
+
+.thumbnail-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .main-content {
@@ -1296,6 +1345,7 @@ button.subscribe-submit i {
     }
     .social-links {
         justify-content: flex-start;
+        margin-left: -0.5rem;
     }
     .subscrube-form {
         padding: 20px;
