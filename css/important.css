@@ -1081,7 +1081,15 @@ button.subscribe-submit i {
     vertical-align: middle
 }
 
-@media (max-width:1020px) {
+.mobile-icon {
+    width: 42px;
+    flex: 0 0 42px;
+    height: 42px;
+    display: none;
+    margin-left: -1rem;
+}
+
+@media (max-width:1019px) {
     .post-sidebar,
     .site-main,
     .head-authors,
@@ -1122,9 +1130,16 @@ button.subscribe-submit i {
         display: inline-flex;
         flex-wrap: wrap;
     }
+    .navigation {
+        display: none;
+    }
+    .navbar-content {
+        height: 50px;
+    }
+    body {
+        padding-top: 50px;
+    }
 }
-
-@media (min-width:1200px) {}
 
 @media (max-width:601px) {
     .category-main,
@@ -1140,6 +1155,10 @@ button.subscribe-submit i {
         padding: 0;
     }
     article.post+article.post {
+        margin-top: 2rem;
+        margin-bottom: 0rem;
+    }
+    .load-more {
         margin-top: 2rem;
     }
     .sidebar {
@@ -1187,6 +1206,56 @@ button.subscribe-submit i {
         width: 20px;
         height: 1px;
     }
+    .navbar-brand a {
+        max-width: 180px;
+        margin: 0;
+    }
+    .navbar-col .button {
+        display: none;
+    }
+    .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .hamRotate.active {
+        transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+        transform: rotate(180deg);
+    }
+    .line {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: #121416;
+        stroke-width: 5.5;
+        stroke-linecap: round;
+    }
+    .ham1 .top {
+        stroke-dasharray: 40 139;
+    }
+    .ham1 .bottom {
+        stroke-dasharray: 40 180;
+    }
+    .ham1.active .top {
+        stroke-dashoffset: -98px;
+    }
+    .ham1.active .bottom {
+        stroke-dashoffset: -138px;
+    }
+    .mobile-icon {
+        display: block;
+    }
+    .navbar-content {
+        justify-content: ;
+    }
+    .site-search {
+        margin-right: -1rem;
+    }
 }
 
 @media (max-width:720px) {
@@ -1227,5 +1296,8 @@ button.subscribe-submit i {
     }
     .social-links {
         justify-content: flex-start;
+    }
+    .subscrube-form {
+        padding: 20px;
     }
 }
